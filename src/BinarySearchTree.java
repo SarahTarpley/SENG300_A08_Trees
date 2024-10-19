@@ -1,4 +1,5 @@
-    public class A08_Trees {
+
+    public class BinarySearchTree {
         //Represent a node of binary tree
         public static class Node{
             int data;
@@ -125,9 +126,9 @@
               else {
                   System.out.print(node.data + " ");
                   if(node.left!= null)
-                      inorderTraversal(node.left);
+                	  preorderTraversal(node.left);
                   if(node.right!= null)
-                      inorderTraversal(node.right);
+                	  preorderTraversal(node.right);
               }
           }
 
@@ -139,9 +140,9 @@
                }
               else {
                   if(node.left!= null)
-                      inorderTraversal(node.left);
+                	  postorderTraversal(node.left);
                   if(node.right!= null)
-                      inorderTraversal(node.right);
+                	  postorderTraversal(node.right);
 
                   System.out.print(node.data + " ");
               }
@@ -160,14 +161,10 @@
               bt.insert(2);
               bt.insert(11);
               //Display traversal methods
-              System.out.println("Binary search tree with In Order Traversal:");
-              bt.inorderTraversal(bt.root);
-
-              System.out.println("Binary search tree with Pre Order Traversal:");
-              bt.preorderTraversal(bt.root);
-
-              System.out.println("Binary search tree with Post Order Traversal:");
-              bt.postorderTraversal(bt.root);
-
+              System.out.print("Binary search tree with Pre Order Traversal:    ");		bt.preorderTraversal(bt.root);
+              System.out.println("\n");
+              System.out.print("Binary search tree with Post Order Traversal:    ");	bt.postorderTraversal(bt.root);
+              System.out.println("\n");
+              System.out.print("Binary search tree with In Order Traversal:    ");		bt.inorderTraversal(bt.root);
           }
     }
