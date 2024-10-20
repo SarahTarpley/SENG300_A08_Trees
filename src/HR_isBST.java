@@ -1,21 +1,23 @@
-//HackerRank "Is This a Binary Search Tree?"
-
+// HackerRank "Is This a Binary Search Tree?"
+// https://www.hackerrank.com/challenges/is-binary-search-tree/problem
 public class HR_isBST extends BinarySearchTree{
 	// Scope: 0 <= data <= 10^4
 	
 	// We needed a way to set the constraint only once
 	// So the original caller is not recursive to accomplish this
 	public static boolean checkBST(Node root) {
-		return checkBSTRecur(root, -1, (int) Math.pow(10, 4)+1);
+		// Remove null trees from the equation.
+		//System.out.println("Received root: "+String.valueOf(root.data));
+		if(root == null){
+			System.out.println("Received null value");
+			return false;
+		}
+		return checkBSTRecur(root, -11, (int) Math.pow(10, 4)+1);
 	}
 	
 	public static boolean checkBSTRecur(Node root, int minVal, int maxVal) {
 		// Innocent until proven guilty!
 		boolean result = true;
-		// Remove null trees from the equation.
-		if(root == null){
-			return false;
-		}
 		// All checks here are seeking a false response to end early
 		if(root.left != null){
 			if(root.left.data >= root.data){ //  || root.left.data >= maxVal
