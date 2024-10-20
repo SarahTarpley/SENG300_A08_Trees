@@ -22,6 +22,6 @@ public class Driver {
         System.out.print("Binary search tree with In Order Traversal:    ");		bt.inorderTraversal(bt.root);
         System.out.println("\n");
         System.out.println("\n\nIs it a binary search tree?: " + HR_isBST.checkBST(bt.root));
-        System.out.println(String.valueOf(Math.pow(10, 4)));
+        //System.out.println(String.valueOf(Math.pow(10, 4)));
     }
 }
